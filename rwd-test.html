@@ -1,16 +1,127 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Fuel Made RWD Test</title>
+<head>
+  <meta charset="utf-8" />
+  <title>Fuel Made RWD Test</title>
 
-    <style type="text/css">
+  <style type="text/css">
 
-    </style>
-  </head>
-  <body>
-    I spent most of my early twenties trying to center a div.
+    *{
+      box-sizing: border-box;
+    }
 
-    <img src="https://unsplash.it/800/800" />
-  </body>
+    html, body{
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .wrapper{
+      padding: 50px;
+    }
+
+    /*------------------------*/
+    /* COLUMN SYSTEM */
+    /*------------------------*/
+    .row{
+      display: flex;
+      -webkit-align-items: center;
+      align-items: center;
+      background: #f5f5f5;
+    }
+
+    .col{
+      position: relative;
+    }
+
+    .col_2{
+      width: 50%;
+    }
+
+    .col_text{
+      text-align: center;
+      font-size: 1.25em;
+      line-height:  1.25em;
+      padding: 0px 50px;
+    }
+
+    .col_bgimg img{
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .clrfix:after{
+      clear:both;
+    }
+
+    /*------------------------*/
+    /* CLASSES */
+    /*------------------------*/
+    .courier{
+      font-family: "Courier", serif;
+    }
+
+    /*------------------------*/
+    /* MEDIA QUERIES */
+    /*------------------------*/
+    @media screen and (max-width: 768px){
+      .row{
+        display: block;
+        flex-direction: column;
+      }
+
+      .col_2{
+        width: auto;
+      }
+
+      .col_square{
+        position: relative;
+      }
+
+      .col_square:after{
+        content: "";
+        display: block;
+        padding-bottom: 100%
+      }
+
+      .col_center_vertical{
+        position: absolute;
+        transform: translateY(50%);
+
+        width: 100%;
+        height: 100%;
+      }
+
+      .col_center_vertical_adjust{
+        transform: translateY(-50%);
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="row clrfix">
+      <div class="col col_2 ">
+        <div class="col_square">
+          <div class="col_center_vertical">
+            <div class="col_center_vertical_adjust">
+              <div class="col_text">
+                I spent most of my early twenties trying to center a <strong class="courier">div</strong>.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col_2 col_bgimg">
+        <div class="col_inner">
+          <img src="https://unsplash.it/800/800" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
 </html>
