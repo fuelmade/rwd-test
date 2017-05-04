@@ -5,12 +5,101 @@
     <title>Fuel Made RWD Test</title>
 
     <style type="text/css">
+      html, 
+      body { 
+        min-height: 100vh;
+        padding: 0; 
+        margin: 0; 
+      }
 
+      .container { 
+        height: 100%; 
+        min-height: 100vh;
+        margin: auto; 
+        max-width: 800px;
+        display: flex; 
+        flex-flow: column nowrap; 
+        justify-content: center; 
+      }
+
+      .content-wrapper { 
+        padding: 40px; 
+        display: block; 
+      }
+
+      .box { 
+        text-align: center;
+        float: left; 
+        display: inline-block; 
+        width: 50%; 
+      }
+
+      .table { 
+        display: table; 
+        width: 100%; 
+        height: 100%; 
+      }
+
+      .table-cell { 
+        padding: 40px;
+        text-align: center; 
+        display: table-cell; 
+        vertical-align: middle; 
+      }
+
+      .box__text { 
+        background: #f2f2f2;
+        position: relative; 
+        padding-top: 50%;
+      }
+
+      .box__text .table-wrapper { 
+        width: 100%; 
+        height: 100%; 
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        right: 0; 
+        bottom: 0; 
+      }
+
+      .box__text span { 
+        font-family: 'Courier New';
+        font-weight: bold; 
+      }
+
+      .box__image img { 
+        display: block; 
+        width: 100%; 
+      }
+
+      @media (max-width: 640px) { 
+        .box { 
+          width: 100%; 
+        }
+
+        .box__text { 
+          padding-top: 100%;
+        }
+      }
     </style>
   </head>
   <body>
-    I spent most of my early twenties trying to center a div.
-
-    <img src="https://unsplash.it/800/800" />
+    <div class="container">
+      <div class="content-wrapper">
+        <div class="box box__text">
+          <div class="table-wrapper">
+            <div class="table">
+              <div class="table-cell">
+                I spent most of my early twenties trying to center a <span>div</span>.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box box__image">
+          <img src="https://unsplash.it/800/800" />
+        </div>
+      </div>
+    </div>
   </body>
 </html>
